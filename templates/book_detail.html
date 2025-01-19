@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }} - Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>{{ book.title }} - Details</h1>
+
+    <h3>Author: <a href="{{ url_for('author_detail', author_id=book.author.id) }}">{{ book.author.name }}</a></h3>
+    <p><strong>Genre:</strong> {{ book.genre }}</p>
+    <p><strong>Published Year:</strong> {{ book.published_year }}</p>
+
+    <a href="{{ url_for('home') }}">Back to Library</a>
+</body>
+</html>
